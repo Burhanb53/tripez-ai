@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tripez-frontend
+  labels:
+    app: tripez-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tripez-frontend
+  template:
+    metadata:
+      labels:
+        app: tripez-frontend
+    spec:
+      containers:
+        - name: tripez-frontend
+          image: 246773436668.dkr.ecr.ap-south-1.amazonaws.com/tripez-app:v1.0
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: ecr-secret
