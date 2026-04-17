@@ -77,7 +77,7 @@ import { RWebShare } from 'react-web-share'
                     <RWebShare
                         data={{
                             text: "Check out this amazing trip!",
-                            url: `https://tripplannerai.vercel.app/public-trip/${trip.id}`,
+                            url: `https://tripez-ai.tripez.in/public-trip/${trip.id}`,
                             //  url: `http://localhost:5173/view-trip/${trip.id}`,
                             title: "Trip Details",
                         }}
