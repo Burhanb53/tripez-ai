@@ -35,7 +35,7 @@ function Hotel({ trip }) {
         const config = {
             method: "post",
             maxBodyLength: Infinity,
-            url: "https://travai.onrender.com/orders",
+            url: "https://tripez-ai.tripez.in/orders",
             //   url: " http://localhost:3000/orders",
             headers: {
                 "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function Hotel({ trip }) {
             key: "rzp_test_VIETwGSQnb8sjv",
             amount: amount,
             currency: "INR",
-            name: "TravAI",
+            name: "Tripez",
             description: "Thank you for booking",
             image: "/logo.png",
             order_id: orderId, // Pass the order ID to Razorpay
@@ -76,7 +76,7 @@ function Hotel({ trip }) {
                 fetchPaymentDetails(response.razorpay_payment_id);
             },
             prefill: {
-                name: "TravAI",
+                name: "TripEz Customer",
                 email: "customer@example.com",
             },
             theme: {
@@ -90,7 +90,7 @@ function Hotel({ trip }) {
     };
 
     const fetchPaymentDetails = (paymentId) => {
-        axios.get(`https://travai.onrender.com/payment/${paymentId}`)
+        axios.get(`https://tripez-ai.tripez.in/payment/${paymentId}`)
             .then((res) => {
                 console.log("Payment details:", res.data);
                 setResponseState(res.data);
